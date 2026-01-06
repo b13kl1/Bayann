@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بيان</title>
+    <style>
+        body {
+            background-color: #ffc0cb; /* خلفية وردية */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            color: #5a2d37;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 90%;
+            width: 400px;
+        }
+
+        h1, h2, p {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        img {
+            width: 200px;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background-color: #ff1493;
+        }
+
+        .hidden {
+            display: none;
+        }
+        
+        .apology-text {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="page1" class="container">
+        <h1>بيان ؟</h1>
+        <button onclick="showPage('page2')">عيوني</button>
+    </div>
+
+    <div id="page2" class="container hidden">
+        <img id="hk-img-2" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDd4bWg4MzF4bnN4ZnMzbnN4ZnMzbnN4ZnMzbnN4ZnMzbnN4ZnMzbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MDJ9IbxxvDUQM/giphy.gif" alt="Hello Kitty Standing">
+        <h2 id="text-2">زعلانة مني ؟</h2>
+        <button onclick="makeSad()">اه</button>
+        <button onclick="showPage('page3')">لا</button>
+    </div>
+
+    <div id="page3" class="container hidden">
+        <p class="apology-text">
+            " انا اسف جدا جدا على اللي صار مبارح ، واللي كان يصير دايما واني ما براضي ومافي مرة حسستك فيها انك رضيتي بسببي ، سواء زعلتي مني او لا ، والله ان كان في مرة جاي ما رح تكون بس سؤال ، مافي سبب لتصرفي الا لاني غلطان 100% ، وزي ما بحكي انتي دايما صح ، ووعد اخر مرة تصير وسامحيني ولا تزعلي مني "
+        </p>
+        <h2>بحبك جدا</h2>
+        <button onclick="showPage('page4')">طيب !</button>
+    </div>
+
+    <div id="page4" class="container hidden">
+        <img src="https://i.pinimg.com/originals/4e/eb/45/4eeb4520775d71b3d5b072834b655740.gif" alt="Hello Kitty Studying">
+        <h2>احلى مهندزة ان شاء الله</h2>
+        <button onclick="showPage('page5')">ان شاء الله</button>
+    </div>
+
+    <div id="page5" class="container hidden">
+        <img id="hk-img-5" src="https://media.tenor.com/images/a0e9807537554988775430856942066d/tenor.gif" alt="Hello Kitty Like">
+        <h2 id="text-5">هسا جد زعلانة مني ؟</h2>
+        <button onclick="stillSad()">اه لسا</button>
+        <button onclick="showPage('page6')">لا خلص</button>
+    </div>
+
+    <div id="page6" class="container hidden">
+        <img src="https://media.tenor.com/images/31818d69785025d259c16428c460d009/tenor.gif" alt="Hello Kitty Heart">
+        <h2>بحبك بيني ❤️</h2>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.container');
+            pages.forEach(page => page.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+
+        // التعديل الثاني: تغيير الصورة والنص بدون رسالة تنبيه
+        function makeSad() {
+            const img = document.getElementById('hk-img-2');
+            const text = document.getElementById('text-2');
+            
+            // تغيير الصورة لوحدة زعلانة
+            img.src = "https://media.tenor.com/images/54e7d991667b36643697e68222c54483/tenor.gif"; 
+            
+            // تغيير النص
+            text.innerText = "اضغطي لا عشان نكمل 👈🏻👉🏻";
+        }
+
+        function stillSad() {
+            const img = document.getElementById('hk-img-5');
+            const text = document.getElementById('text-5');
+            
+            img.src = "https://media.tenor.com/images/54e7d991667b36643697e68222c54483/tenor.gif";
+            text.innerText = "لهسا 😿";
+        }
+    </script>
+</body>
+</html>
